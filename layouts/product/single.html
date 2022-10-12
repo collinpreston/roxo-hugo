@@ -13,10 +13,13 @@
             <img src="{{ . | absURL }}" alt="project image">
             {{ end }}
           </div>
+          <a href="{{ .Params.etsy_link }}" class="btn-sm btn-primary btn-md-rounded buy-btn">
+            Buy Now
+          </a>
           <div class="site-project-single-description">
             {{ .Content }}
           </div>
-          <button class="btn-sm btn-primary btn-md-rounded" onclick="history.back()">Go Back</button>
+          <button class="btn-sm btn-primary btn-sm-rounded" onclick="history.back()">Go Back</button>
         </div>
       </div>
     </div>

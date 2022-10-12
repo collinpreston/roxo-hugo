@@ -179,8 +179,15 @@
         padding: 100px 0;
       }
     }
+    a{
+      &.buy-btn{
+        background: $primary-color;
+        float: right;
+      }
+    }
     button{
       margin-bottom: 50px;
+      background: $primary-color;
     }
     h1{
       font-size: 40px;
@@ -193,6 +200,9 @@
       margin-bottom: 30px;
       img{
         width: 48%;
+        &:nth-child(1n){
+          padding-top: 10px;
+        }
         &:nth-child(2n){
           margin-left: auto;
         }
