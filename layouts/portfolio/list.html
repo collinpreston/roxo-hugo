@@ -17,7 +17,7 @@
 <section class="site-project" id="project">
   <div class="container">
     <div class="row">
-      {{ range (.Paginator 10).Pages }}
+      {{ range .RegularPagesRecursive }}
       <div class="col-md-4 mx-auto">
         <div class="site-project-item" onclick="location.href='{{ .Permalink }}'">
           <div class="site-project-item-thumb">
