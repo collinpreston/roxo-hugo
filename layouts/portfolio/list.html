@@ -10,12 +10,6 @@
           </h1>
         </div>
       </div>
-      <div class="col-lg-4">
-        <a href="#project" class="site-project-header-action scroll-to">
-          <span>Scroll Down</span>
-          <img src="{{ "images/arrow-down.svg" | absURL }}" alt="arrow-down">
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -24,7 +18,7 @@
   <div class="container">
     <div class="row">
       {{ range (.Paginator 10).Pages }}
-      <div class="col-md-6 mx-auto">
+      <div class="col-md-5 mx-auto">
         <div class="site-project-item" onclick="location.href='{{ .Permalink }}'">
           <div class="site-project-item-thumb">
             <img src="{{ .Params.Image | absURL }}" alt="project-thumb">
