@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="site-project-single-section">
+<section>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
@@ -8,26 +8,15 @@
           <h1>
             {{ .Title }}
           </h1>
-          <div class="site-project-single-description">
-            {{ .Content }}
-          </div>
           <div class="site-project-single-image">
             {{ range .Params.project_images }}
             <img src="{{ . | absURL }}" alt="project image">
             {{ end }}
           </div>
-          {{ if .NextInSection }}
-          <div class="site-project-single-action">
-            <a href="{{.NextInSection.Permalink}}">
-              <span class="link-area">
-                <span data-text="Next Project">
-                  Next Project
-                </span>
-              </span>
-              <img src="{{ "images/to-top.svg" | absURL }}" alt="next project">
-            </a>
+          <div class="site-project-single-description">
+            {{ .Content }}
           </div>
-          {{ end }}
+          <button class="btn-sm btn-primary btn-md-rounded" onclick="history.back()">Go Back</button>
         </div>
       </div>
     </div>
