@@ -1,4 +1,4 @@
-{{ with .Site.Params.portfolio }}
+{{ with .Site.Params.portfolio.clothing }}
   {{ if .enable }}
   <section class="site-project" id="project">
     <div class="container">
@@ -8,7 +8,7 @@
             <p>{{ .subtitle }}</p>
           </div>
         </div>
-        {{ range (where $.Site.Pages "Type" "category") }}
+        {{ range (.Paginator 10).Pages }}
         <div class="col-md-4">
           <div class="site-project-item" onclick="location.href='{{ .Permalink }}'">
             <div class="site-project-item-thumb">
@@ -21,9 +21,6 @@
           </div>
         </div>
         {{ end }}
-        <div class="col-12 text-center text-lg-left">
-          <a href="portfolio" class="site-project-cta">ALL ITEMS</a>
-        </div>
       </div>
     </div>
   </section>

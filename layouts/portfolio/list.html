@@ -23,16 +23,15 @@
 <section class="site-project" id="project">
   <div class="container">
     <div class="row">
-      {{ range (.Paginator 4).Pages }}
-      <div class="col-lg-6 col-md-10 mx-auto">
-        <div class="site-project-item">
+      {{ range (.Paginator 10).Pages }}
+      <div class="col-md-6 mx-auto">
+        <div class="site-project-item" onclick="location.href='{{ .Permalink }}'">
           <div class="site-project-item-thumb">
             <img src="{{ .Params.Image | absURL }}" alt="project-thumb">
           </div>
           <div class="site-project-item-content">
-            <span>{{ delimit .Params.category ", " }}</span>
             <h3>{{ .Title }}</h3>
-            <a href="{{ .Permalink }}" class="read-more">view project</a>
+            <a href="{{ .Permalink }}" class="read-more">view</a>
           </div>
         </div>
       </div>
@@ -45,7 +44,5 @@
     </div>
   </div>
 </section>
-
-{{ partial "call-to-action.html" . }}
 
 {{ end }}
