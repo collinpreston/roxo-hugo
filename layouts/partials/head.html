@@ -8,6 +8,10 @@
   {{ with .Site.Params.author }}
   <meta name="author" content="{{ . }}">
   {{ end }}
+  {{ with .Keywords }}
+  <meta name="keywords" content="{{ . }}">
+  {{ end }}
+  <meta name="description" content="{{ if .Page.Description }}{{ .Page.Description }}{{else if .Site.Params.Description}}{{ .Site.Params.Description }}{{ end }}">
   {{ hugo.Generator }}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
@@ -27,9 +31,6 @@
 
     gtag('config', '{{ .Site.Params.GoogleAnalyticsID }}');
   </script>
-
-  <meta name="keywords" content="{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ end }}">
-  <meta name="description" content="{{ if .Params.Description }}{{ trim .Params.Description "\n" }}{{else if .Site.Params.Description}}{{ trim .Site.Params.Description "\n"}}{{ end }}">
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ .Site.Params.logo | absURL }}" type="image/x-icon" />
