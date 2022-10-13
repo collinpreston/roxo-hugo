@@ -19,6 +19,15 @@
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
   <link href="{{ $style.Permalink }}" rel="stylesheet" />
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.GoogleAnalyticsID }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ .Site.Params.GoogleAnalyticsID }}');
+  </script>
+
   <meta name="keywords" content="{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ end }}">
   <meta name="description" content="{{ if .Params.Description }}{{ trim .Params.Description "\n" }}{{else if .Site.Params.Description}}{{ trim .Site.Params.Description "\n"}}{{ end }}">
 
