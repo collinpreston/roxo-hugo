@@ -15,12 +15,12 @@
       position: absolute;
       background: $gray;
       width: 100%;
-      padding: 20px 50px;
+      padding: 5px 5px;
       bottom: 0;
       transition: all .3s $site-ease;
       @include tablet{
-        padding: 30px;
-        padding-bottom: 75px;
+        padding: 5px;
+        padding-bottom: 5px;
       }
       span{
         font-family: $secondary-font;
