@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-{{ partial "hero.html" . }}
+{{ partialCached "hero.html" . }}
 
-{{ partial "portfolio.html" . }}
+{{ partialCached "portfolio.html" . }}
 
 {{ end }}
