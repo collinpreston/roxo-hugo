@@ -1,3 +1,6 @@
+.item-col{
+  margin-bottom: 30px;
+}
 .site-project{
   padding: 120px 0;
   overflow: hidden;
@@ -6,6 +9,7 @@
     position: relative;
     margin-bottom: 30px;
     transition: all 0.3s ease-in;
+    height: 100%;
     &-thumb{
       img{
         width: 100%;
